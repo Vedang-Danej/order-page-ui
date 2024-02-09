@@ -1,38 +1,258 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 120%;
+}
+
+body {
+  background: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  width: 340px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  font-size: 20px;
+  color: #ff6b82;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  position: relative;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header span {
+  background-color: #fff;
+  z-index: 2;
+  padding: 0 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0.9px;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  background: #c8c8c8;
+  z-index: -1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pair {
+  position: relative;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
+  border: 0.9px solid #c8c8c8;
+  color: #000;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  cursor: pointer;
+}
+
+.pair-head {
+  margin-top: 2px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+.pair-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price > p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.price > p > span {
   color: white;
+  background-color: #ff6b82;
+  padding: 2.5px 5px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 4px;
+  border-radius: 2px;
+}
+.price > h4 {
+  font-size: 12px;
+  font-weight: 400;
 }
 
-.App-link {
-  color: #61dafb;
+.pair-info h5 {
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #9f9f9f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price > div {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.discount h4 {
+  font-size: 14.46px;
+  font-weight: 500;
+}
+.discount h5 {
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.pair .pair-body .row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 3px 0;
+}
+
+.pair .pair-body .number {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pair-body p {
+  color: #000;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.pair-body select {
+  border-radius: 3px;
+  border: 0.904px solid #d9d9d9;
+  background: #fff;
+  padding: 1px;
+  width: 80px;
+  height: 25px;
+}
+.banner-content::before {
+  position: absolute;
+  content: 'MOST POPULAR';
+  top: 0;
+  right: 0.68%;
+  background-color: #ff6b82;
+  letter-spacing: 0.8px;
+  color: white;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 5px 9px;
+  border-radius: 0 0 3px 3px;
+  margin-top: -7px;
+  z-index: 1000;
+}
+.banner::after {
+  border-bottom: 7px solid red;
+  border-left: 10px solid transparent;
+  border-right: 3px solid transparent;
+  width: 0;
+  height: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  overflow: hidden;
+  left: 96.59%;
+}
+.banner::before {
+  border-bottom: 7px solid red;
+  border-left: 3px solid transparent;
+  border-right: 7px solid transparent;
+  width: 0;
+  height: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 64.5%;
+}
+.total {
+  width: 100%;
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.total p {
+  color: #ff6b82;
+}
+
+.total h4,
+.total h4 span {
+  font-weight: 500;
+}
+
+.cta {
+  width: 100%;
+}
+
+.cta button {
+  width: 100%;
+  margin-top: 13px;
+  padding: 1rem 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  background: #ff6b82;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cta button:hover {
+  opacity: 0.9;
+}
+.icon {
+  margin-right: 3px;
+}
+.footer {
+  width: 100%;
+}
+.footer p {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+  color: #00000066;
+}
+
+main > .pair.active {
+  background: #fff9fa;
+}
+
+main > .pair:not(.active) .pair-body {
+  display: none;
 }
